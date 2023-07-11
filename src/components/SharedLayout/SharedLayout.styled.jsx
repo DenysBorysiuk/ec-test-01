@@ -11,6 +11,14 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   padding: 10px 0;
-  margin-bottom: 26px;
-  border-bottom: 2px solid #5735a3;
+  margin-bottom: 36px;
+  background-color: #2196f3;
+
+  > h1 {
+    /* margin: 0 auto; */
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    /* text-transform: uppercase; */
+  }
 `;
