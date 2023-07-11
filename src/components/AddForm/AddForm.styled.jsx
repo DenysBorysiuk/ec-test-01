@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Form, Field } from "formik";
+import { Form, Field, ErrorMessage } from "formik";
 import { NavLink } from "react-router-dom";
 
 export const Link = styled(NavLink)`
@@ -49,6 +49,7 @@ export const Input = styled(Field)`
 `;
 
 export const RadioWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -132,4 +133,16 @@ export const CancelBtn = styled(NavLink)`
   &:hover {
     transform: scale(1.05);
   }
+`;
+
+export const Error = styled(ErrorMessage)`
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 12px;
+  text-align: left;
+  line-height: calc(16 / 12);
+  color: #ff0000;
 `;

@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { addTransaction } from "../../redux/transactions/slice";
+import { v4 as uuidv4 } from "uuid";
 import { Formik, Field } from "formik";
 import {
   ButtonWrapper,
@@ -9,8 +12,11 @@ import {
   Link,
   CancelBtn,
   SendBtn,
+  Error,
 } from "./AddForm.styled";
 import { FaArrowLeft } from "react-icons/fa";
+import schema from "../../helpers/schema";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -19,12 +25,28 @@ const initialValues = {
 };
 
 const AddForm = () => {
-  const handleSubmit = (values) => {
-    console.log(values);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  //   console.log(new Date());
+  //   console.log(new Date().toLocaleString("uk-UA"));
+  const handleSubmit = (values, { resetForm }) => {
+    dispatch(
+      addTransaction({
+        ...values,
+        id: uuidv4(),
+        date: Date.now(),
+      })
+    );
+    resetForm();
+    navigate("/");
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={schema}
+      onSubmit={handleSubmit}
+    >
       {({ values }) => (
         <div>
           <Link to={"/"}>
@@ -35,12 +57,13 @@ const AddForm = () => {
             <Label>
               Назва транзакції
               <Input type="text" name="name" />
+              <Error name="name" component="div" />
             </Label>
             <Label>
               Сума транзакції
               <Input type="text" name="amount" />
+              <Error name="amount" component="div" />
             </Label>
-            {console.log(values.type)}
             <RadioWrapper>
               <span>Тип транзакції</span>
               <div>
@@ -63,6 +86,7 @@ const AddForm = () => {
                     checked={values.type === "expense"}
                   />
                 </RadioLabel>
+                <Error name="type" component="div" />
               </div>
             </RadioWrapper>
             <ButtonWrapper>

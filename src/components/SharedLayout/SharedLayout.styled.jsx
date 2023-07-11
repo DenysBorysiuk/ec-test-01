@@ -8,17 +8,21 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
   padding: 10px 0;
   margin-bottom: 36px;
   background-color: #2196f3;
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
 
   > h1 {
-    /* margin: 0 auto; */
     font-size: 26px;
     font-weight: 700;
     color: #fff;
-    /* text-transform: uppercase; */
   }
 `;

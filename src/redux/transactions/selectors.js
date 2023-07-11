@@ -1,1 +1,1 @@
-export const selectTransaction = (state) => state.transaction;
+export const selectTransactions = (state) => state.transactions.items;
