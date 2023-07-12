@@ -2,8 +2,7 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Header, HeaderContainer } from "./SharedLayout.styled";
 import { TfiMoney } from "react-icons/tfi";
-// import { Toaster } from "react-hot-toast";
-// import Loader from "../Loader/Loader";
+import Loader from "../Loader/Loader";
 
 const SharedLayout = () => {
   return (
@@ -15,12 +14,10 @@ const SharedLayout = () => {
         </HeaderContainer>
       </Header>
       <Container>
-        {/* <Toaster /> */}
         <Suspense
           fallback={
             <div>
-              ...Loading
-              {/* <Loader /> */}
+              <Loader />
             </div>
           }
         >
