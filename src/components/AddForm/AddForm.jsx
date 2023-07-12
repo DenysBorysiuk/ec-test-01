@@ -14,7 +14,7 @@ import {
   SendBtn,
   Error,
 } from "./AddForm.styled";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaPlus, FaMinus } from "react-icons/fa";
 import schema from "../../helpers/schema";
 import { useNavigate } from "react-router-dom";
 
@@ -67,6 +67,7 @@ const AddForm = () => {
               <span>Тип транзакції</span>
               <div>
                 <RadioLabel checked={values.type === "income"}>
+                  <FaPlus size="15" color="#21f33d" />
                   Дохід
                   <Field
                     type="radio"
@@ -77,6 +78,7 @@ const AddForm = () => {
                 </RadioLabel>
 
                 <RadioLabel checked={values.type === "expense"}>
+                  <FaMinus size="15" color="#f44336" />
                   Витрата
                   <Field
                     type="radio"

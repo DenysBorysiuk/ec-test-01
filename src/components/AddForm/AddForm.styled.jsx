@@ -64,12 +64,16 @@ export const RadioWrapper = styled.div`
 `;
 
 export const RadioLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 5px;
   padding: 8px 16px;
   width: fit-content;
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
   line-height: calc(19 / 14);
+  text-transform: uppercase;
   border-radius: 20px;
   background-color: ${(props) => (props.checked ? "#54adff" : "#CCE4FB")};
   color: ${(props) => (props.checked ? "#FEF9F9" : "#54ADFF")};
