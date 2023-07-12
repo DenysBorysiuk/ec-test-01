@@ -1,6 +1,7 @@
-import { useDispatch } from "react-redux";
-import { addTransaction } from "../../redux/transactions/slice";
-import { v4 as uuidv4 } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import { selectTransactions } from "../../redux/transactions/selectors";
+import { updateTransaction } from "../../redux/transactions/slice";
+import { useParams } from "react-router-dom";
 import { Formik, Field } from "formik";
 import {
   ButtonWrapper,
@@ -13,26 +14,25 @@ import {
   CancelBtn,
   SendBtn,
   Error,
-} from "./AddForm.styled";
+} from "./EditForm.styled";
 import { FaArrowLeft } from "react-icons/fa";
 import schema from "../../helpers/schema";
 import { useNavigate } from "react-router-dom";
 
-const initialValues = {
-  name: "",
-  amount: "",
-  type: "",
-};
-
-const AddForm = () => {
+const EditForm = () => {
   const dispatch = useDispatch();
+  const { transactionId } = useParams();
+  const tranasctions = useSelector(selectTransactions);
+  const tranasction = tranasctions.find(
+    (transaction) => transaction.id === transactionId
+  );
   const navigate = useNavigate();
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(
-      addTransaction({
+      updateTransaction({
         ...values,
-        id: uuidv4(),
+        id: transactionId,
         date: Date.now(),
       })
     );
@@ -42,7 +42,11 @@ const AddForm = () => {
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={{
+        name: tranasction.name,
+        amount: tranasction.amount,
+        type: tranasction.type,
+      }}
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
@@ -52,7 +56,7 @@ const AddForm = () => {
             <FaArrowLeft color="#2196f3" /> Назад
           </Link>
           <FormStyled>
-            <h2>Нова транзакція</h2>
+            <h2>Редагування</h2>
             <Label>
               Назва транзакції
               <Input type="text" name="name" />
@@ -99,4 +103,4 @@ const AddForm = () => {
   );
 };
 
-export default AddForm;
+export default EditForm;

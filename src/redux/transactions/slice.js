@@ -14,8 +14,14 @@ const transactionsSlice = createSlice({
     delTransaction: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
+    updateTransaction: (state, action) => {
+      state.items = state.items.map((item) =>
+        item.id === action.payload.id ? action.payload : item
+      );
+    },
   },
 });
 
 export const transactionsReducer = transactionsSlice.reducer;
-export const { addTransaction, delTransaction } = transactionsSlice.actions;
+export const { addTransaction, delTransaction, updateTransaction } =
+  transactionsSlice.actions;

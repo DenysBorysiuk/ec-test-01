@@ -1,7 +1,15 @@
 import { useDispatch } from "react-redux";
 import { delTransaction } from "../../redux/transactions/slice";
 import PropTypes from "prop-types";
-import { Item } from "./TransactionItem.styled";
+import {
+  Item,
+  BtnWrapper,
+  Amount,
+  DelBtn,
+  EditBtn,
+  TransactionDate,
+} from "./TransactionItem.styled";
+import { FaRegTrashAlt, FaEdit } from "react-icons/fa";
 
 const TransactionItem = ({ transaction: { amount, date, id, name, type } }) => {
   const newDate = new Date(date);
@@ -13,11 +21,19 @@ const TransactionItem = ({ transaction: { amount, date, id, name, type } }) => {
 
   return (
     <Item type={type}>
-      <span>{newDate.toLocaleDateString("uk-UA")}</span>
+      <TransactionDate>{newDate.toLocaleDateString("uk-UA")}</TransactionDate>
+      <Amount type={type}>
+        {type === "income" ? `+${amount}` : `-${amount}`}грн.
+      </Amount>
       <span>{name}</span>
-      <span>{type === "income" ? `+${amount}` : `-${amount}`}грн.</span>
-      <button className="delete-btn">ред.</button>
-      <button onClick={() => handleDelete(id)}>x</button>
+      <BtnWrapper>
+        <EditBtn to={`/transaction/${id}`}>
+          <FaEdit size="20" color="#2196f3" />
+        </EditBtn>
+        <DelBtn onClick={() => handleDelete(id)}>
+          <FaRegTrashAlt size="20" color="#f44336" />
+        </DelBtn>
+      </BtnWrapper>
     </Item>
   );
 };

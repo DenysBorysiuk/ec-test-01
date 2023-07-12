@@ -1,13 +1,12 @@
-import { NavLink } from "react-router-dom";
 import TransactionList from "../components/TransactionList/TransactionList";
 import TransactionInfo from "../components/TransactionInfo/TransactionInfo";
+import AddBtn from "../components/AddBtn/AddBtn";
 
 const Home = () => {
   return (
     <div>
-      <NavLink to={"/newTransaction"}>Нова транзакція</NavLink>
+      <AddBtn />
       <TransactionInfo />
-      <h2>Історія транзакцій</h2>
       <TransactionList />
     </div>
   );

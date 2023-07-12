@@ -14,6 +14,7 @@ const TransactionInfo = () => {
     .reduce((total, transaction) => total + Number(transaction.amount), 0);
 
   const budgetBalance = totalIncome - totalExpenses;
+
   return (
     <List>
       <Item>
