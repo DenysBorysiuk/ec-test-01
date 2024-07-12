@@ -1,38 +1,27 @@
 {
-  "name": "crm-for-vendors",
-  "version": "0.1.0",
+  "name": "it-traveler",
+  "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "check-types": "tsc --pretty --noEmit",
-    "check-format": "prettier --check .",
-    "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "format": "prettier --write .",
-    "fix": "npm run format && npm run lint --fix",
-    "prepare": "husky install",
-    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "eslint-config-prettier": "^9.1.0",
-    "next": "14.1.0",
-    "react": "^18",
-    "react-dom": "^18"
+    "pinia": "^2.1.7",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
-    "husky": "^8.0.3",
-    "postcss": "^8",
-    "prettier": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.3.1"
   }
 }
