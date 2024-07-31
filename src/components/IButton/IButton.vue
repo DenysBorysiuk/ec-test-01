@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 
 const props = defineProps({
   variant: {
@@ -8,6 +8,11 @@ const props = defineProps({
     validator: (value) => {
       return ['primary', 'gradient', 'outlined'].includes(value)
     }
+  },
+  to: String,
+  isLoading: {
+    default: false,
+    type: Boolean
   }
 })
 
