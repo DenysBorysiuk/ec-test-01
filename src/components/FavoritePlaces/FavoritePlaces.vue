@@ -9,6 +9,6 @@ import IButton from '../IButton/IButton.vue'
 
     <FavoritePlace v-for="n in 4" :key="n" />
 
-    <IButton class="w-full mt-10">Додати маркер</IButton>
+    <IButton class="w-full mt-10" variant="gradient">Додати маркер</IButton>
   </div>
 </template>
