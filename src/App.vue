@@ -1,8 +1,15 @@
 <script setup>
+import { ref } from 'vue'
 // import HomePage from './views/HomePage.vue'
 // import FavoritePlaces from './components/FavoritePlaces/FavoritePlaces.vue'
 // import RegistrationForm from './components/RegistrationForm/RegistrationForm.vue'
 import IModal from './components/IModal/IModal.vue'
+
+const isOpen = ref(true)
+
+const closeModal = () => {
+  isOpen.value = false
+}
 </script>
 
 <template>
@@ -11,5 +18,5 @@ import IModal from './components/IModal/IModal.vue'
     <FavoritePlaces />
   </div> -->
   <!-- <RegistrationForm /> -->
-  <IModal />
+  <IModal v-if="isOpen" @close="closeModal" />
 </template>
