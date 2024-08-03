@@ -1,11 +1,7 @@
 <script setup>
-// import HomePage from './views/HomePage.vue'
-// import GreetingView from './views/GreetingView.vue'
-import AuthView from './views/AuthView.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <!-- <HomePage /> -->
-  <!-- <GreetingView /> -->
-  <AuthView />
+  <router-view />
 </template>
