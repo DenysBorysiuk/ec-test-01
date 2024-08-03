@@ -28,6 +28,7 @@ const props = defineProps({
       :title="place.title"
       :description="place.description"
       :img="place.img"
+      :is-active="place.id === props.activeId"
     />
 
     <IButton class="w-full mt-10" variant="gradient">Додати маркер</IButton>
