@@ -1,10 +1,11 @@
 <script setup>
-// import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import LoginForm from '../components/LoginForm/LoginForm.vue'
 // import { authService } from '../api/authService'
 // import { useMutation } from '../composables/useMutation'
 
-// const router = useRouter()
+const router = useRouter()
+
 // const {
 //   isLoading,
 //   error,
