@@ -1,7 +1,7 @@
 <script setup>
-import RegistrationForm from '../components/Auth/RegistrationForm/RegistrationForm.vue'
-import { authService } from '../api/authService'
 import { useRouter } from 'vue-router'
+import RegistrationForm from '../components/RegistrationForm/RegistrationForm.vue'
+import { authService } from '../api/authService'
 import { useMutation } from '../composables/useMutation'
 
 const router = useRouter()
