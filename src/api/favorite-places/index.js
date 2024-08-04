@@ -2,13 +2,12 @@ import { clientFetch } from '../clientFetch'
 
 const BASE_PLACES_URL = '/points'
 
-export const getFavoritePlaces = () => {
-  return clientFetch.get(BASE_PLACES_URL).then(({ data }) =>
-    data.map((place) => ({
-      ...place,
-      id: place._id
-    }))
-  )
+export const getFavoritePlaces = async () => {
+  const { data } = await clientFetch.get(BASE_PLACES_URL)
+  return data.map((place) => ({
+    ...place,
+    id: place._id
+  }))
 }
 
 export const addFavoritePlace = (body) => {
