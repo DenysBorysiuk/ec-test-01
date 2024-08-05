@@ -1,5 +1,4 @@
 <script setup>
-import { defineEmits } from 'vue'
 import FavoritePlaceIconButton from './FavoritePlaceIconButton.vue'
 import DeleteIcon from '../icons/DeleteIcon.vue'
 import EditIcon from '../icons/EditIcon.vue'
