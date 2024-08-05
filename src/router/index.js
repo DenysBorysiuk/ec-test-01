@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import { authService } from '../api/authService/index'
+import { authService } from '../api/authService/index'
 
 const GreetingPage = () => import('../views/GreetingView.vue')
 const Homepage = () => import('../views/HomePageView.vue')
@@ -26,15 +26,15 @@ export const router = createRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   const authRoutes = ['login', 'registration']
-//   const { name } = to
+router.beforeEach((to, from, next) => {
+  const authRoutes = ['login', 'registration']
+  const { name } = to
 
-//   if (authService.isLoggedIn() && authRoutes.includes(name)) {
-//     next({ name: 'homepage' })
-//   } else if (!authRoutes.includes(name) && !authService.isLoggedIn()) {
-//     next({ name: 'login' })
-//   } else {
-//     next()
-//   }
-// })
+  if (authService.isLoggedIn() && authRoutes.includes(name)) {
+    next({ name: 'homepage' })
+  } else if (!authRoutes.includes(name) && !authService.isLoggedIn()) {
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+})
