@@ -111,6 +111,7 @@ const handleDeletePlace = () => {
     </slot>
 
     <slot></slot>
+
     <IButton class="w-full mt-10" variant="gradient" @click="emit('create')">
       Додати маркер
     </IButton>
