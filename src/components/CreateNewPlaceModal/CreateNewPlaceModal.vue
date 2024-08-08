@@ -1,10 +1,10 @@
 <script setup>
 import { computed, reactive } from 'vue'
-import IButton from '../IButton/IButton.vue'
-import IInput from '../IInput/IInput.vue'
-import IModal from '../IModal/IModal.vue'
-import InputImage from '../InputImage/InputImage.vue'
-import MarkerIcon from '../icons/MarkerIcon.vue'
+import IButton from '@/components//IButton/IButton.vue'
+import IInput from '@/components//IInput/IInput.vue'
+import IModal from '@/components//IModal/IModal.vue'
+import InputImage from '@/components//InputImage/InputImage.vue'
+import MarkerIcon from '@/components//icons/MarkerIcon.vue'
 
 const props = defineProps({
   isOpen: {

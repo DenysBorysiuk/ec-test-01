@@ -1,9 +1,9 @@
 <script setup>
-import { logout } from '../../api/user'
-import LogoutIcon from '../icons/LogoutIcon.vue'
-import { useMutation } from '../../composables/useMutation'
 import { useRouter } from 'vue-router'
-import { authService } from '../../api/authService'
+import { logout } from '@/api/user'
+import { authService } from '@/api/authService'
+import LogoutIcon from '@/components/icons/LogoutIcon.vue'
+import { useMutation } from '@/composables/useMutation'
 
 const router = useRouter()
 

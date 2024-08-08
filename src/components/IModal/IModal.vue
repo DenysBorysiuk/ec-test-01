@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, Teleport } from 'vue'
-import CrossIcon from '../icons/CrossIcon.vue'
+import CrossIcon from '@/components/icons/CrossIcon.vue'
 
 const emit = defineEmits(['close'])
 

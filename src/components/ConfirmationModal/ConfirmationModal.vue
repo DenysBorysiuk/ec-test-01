@@ -1,6 +1,6 @@
 <script setup>
-import IButton from '../IButton/IButton.vue'
-import IModal from '../IModal/IModal.vue'
+import IButton from '@/components/IButton/IButton.vue'
+import IModal from '@/components//IModal/IModal.vue'
 
 defineProps({
   title: {

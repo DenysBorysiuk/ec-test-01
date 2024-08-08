@@ -1,11 +1,11 @@
 <script setup>
-import IButton from '../IButton/IButton.vue'
-import IInput from '../IInput/IInput.vue'
-import IModal from '../IModal/IModal.vue'
-import InputImage from '../InputImage/InputImage.vue'
-import MarkerIcon from '../icons/MarkerIcon.vue'
-import fallbackImage from '../../assets/img/ukraine.png'
 import { ref, watch } from 'vue'
+import IButton from '@/components/IButton/IButton.vue'
+import IInput from '@/components/IInput/IInput.vue'
+import IModal from '@/components/IModal/IModal.vue'
+import InputImage from '@/components/InputImage/InputImage.vue'
+import MarkerIcon from '@/components/icons/MarkerIcon.vue'
+import fallbackImage from '@/assets/img/ukraine.png'
 
 const props = defineProps({
   isOpen: {

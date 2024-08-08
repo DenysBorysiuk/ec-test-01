@@ -1,8 +1,8 @@
 <script setup>
 import FavoritePlaceIconButton from './FavoritePlaceIconButton.vue'
-import DeleteIcon from '../icons/DeleteIcon.vue'
-import EditIcon from '../icons/EditIcon.vue'
-import fallbackImage from '../../assets/img/ukraine.png'
+import DeleteIcon from '@/components/icons/DeleteIcon.vue'
+import EditIcon from '@/components/icons/EditIcon.vue'
+import fallbackImage from '@/assets/img/ukraine.png'
 
 const props = defineProps({
   title: {

@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
-import UserIcon from '../icons/UserIcon.vue'
-import { useMutation } from '../../composables/useMutation'
-import { getUserInfo } from '../../api/user'
+import { getUserInfo } from '@/api/user'
+import { useMutation } from '@/composables/useMutation'
+import UserIcon from '@/components/icons/UserIcon.vue'
 
 const {
   data: userInfo,
