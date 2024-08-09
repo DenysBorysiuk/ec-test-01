@@ -1,10 +1,14 @@
 import { clientFetch } from '../clientFetch'
-import { router } from '../../router'
+import { router } from '@/router'
 
 export const TOKEN_KEY = 'token'
 
 class AuthService {
   #token = null
+
+  getUserInfo() {
+    return clientFetch.get('/user/me')
+  }
 
   isLoggedIn() {
     return Boolean(this.#token)
@@ -39,9 +43,7 @@ class AuthService {
   }
 
   async logout() {
-    await clientFetch.get('/user/logout')
-
-    this.clearToken()
+    return await clientFetch.get('/user/logout')
   }
 
   async refresh() {

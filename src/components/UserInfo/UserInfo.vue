@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
-import { getUserInfo } from '@/api/user'
+// import { getUserInfo } from '@/api/user'
+import { authService } from '@/api/authService'
 import { useMutation } from '@/composables/useMutation'
 import UserIcon from '@/components/icons/UserIcon.vue'
 
@@ -9,7 +10,7 @@ const {
   mutation: getUser,
   isLoading
 } = useMutation({
-  mutationFn: () => getUserInfo()
+  mutationFn: () => authService.getUserInfo()
 })
 
 onMounted(() => {
