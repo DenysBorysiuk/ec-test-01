@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { authService } from '../api/authService/index'
+import { authService } from '@/api/authService/index'
 
-const GreetingPage = () => import('../views/GreetingView.vue')
-const Homepage = () => import('../views/HomePageView.vue')
-const AuthPage = () => import('../views/AuthView.vue')
-const LoginPage = () => import('../views/LoginView.vue')
-const RegistrationPage = () => import('../views/RegistrationView.vue')
+const GreetingPage = () => import('@/views/GreetingView.vue')
+const Homepage = () => import('@/views/HomePageView.vue')
+const AuthPage = () => import('@/views/AuthView.vue')
+const LoginPage = () => import('@/views/LoginView.vue')
+const RegistrationPage = () => import('@/views/RegistrationView.vue')
 
 const routes = [
   { path: '/', component: GreetingPage, name: 'greeting' },
