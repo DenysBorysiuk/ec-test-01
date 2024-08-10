@@ -6,6 +6,16 @@
 
 ## 🗂️ Project description
 
+### Goals
+
+Implement the IT-Traveler APP according to the technical specifications.
+
+### Used Technologies:
+
+- VUE 3
+- JavaScript
+- Tailwind
+
 ## ⚙️ Deployment
 
 To deploy this project, you need to perform the following steps:
